@@ -21,10 +21,19 @@ using namespace std;
 class Solution {
 public:
     int removeDuplicates(vector<int>& nums) {
-        int k = 0;
-        for (int i = 1; i < nums.size(); i++){
-                if (nums[i-1] == nums[i]) nums[i] = 101;
-                else k++; 
+        int last_element = -1;
+        int k = 1;
+        for (int i = 0; i < nums.size(); i++){
+                if (i == 0) last_element = nums[i];
+                else{
+                    if (last_element == nums[i])
+                        nums[i] = 101;
+                    else {
+                        k++;
+                        last_element = nums[i];
+                    }
+                }
+                
             }
         sort(nums.begin(), nums.end());
         return k;

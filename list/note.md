@@ -5,5 +5,3 @@ Dynamic list has following proporties
  - remove [O(n)]
  - add [O(n)]
  - extend, when array is full [O(n)]
-
-    
